@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+cmd/protoc-gen-go-echo-http/protoc-gen-go-echo-http
 
 # Test binary, built with `go test -c`
 *.test

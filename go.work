@@ -1,0 +1,6 @@
+go 1.17
+
+use (
+	./cmd/protoc-gen-go-echo-http
+	./example
+)

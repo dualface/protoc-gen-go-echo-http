@@ -1,0 +1,21 @@
+syntax = "proto3";
+package api;
+
+option go_package = "example/api";
+
+// AuthService is a service for authentication.
+service AuthService {
+  // ApplyToken returns a token for the given username and password.
+  rpc ApplyToken(ApplyTokenRequest) returns (ApplyTokenResponse) {}
+}
+
+// ApplyTokenRequest is a request for ApplyToken.
+message ApplyTokenRequest {
+  string username = 1; // username for authentication.
+  string password = 2; // password for authentication.
+}
+
+// ApplyTokenResponse is a response for ApplyToken.
+message ApplyTokenResponse {
+  string token = 1; // token for the given username and password.
+}

@@ -1,0 +1,65 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/auth/apply_token": {
+            "post": {
+                "description": "ApplyToken returns a token for the given username and password.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "parameters": [
+                    {
+                        "description": "ApplyTokenRequest is a request for ApplyToken.",
+                        "name": "req",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/api.ApplyTokenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/api.ApplyTokenResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "api.ApplyTokenRequest": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "description": "password for authentication.",
+                    "type": "string"
+                },
+                "username": {
+                    "description": "username for authentication.",
+                    "type": "string"
+                }
+            }
+        },
+        "api.ApplyTokenResponse": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "description": "token for the given username and password.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

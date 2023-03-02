@@ -1,0 +1,41 @@
+definitions:
+  api.ApplyTokenRequest:
+    properties:
+      password:
+        description: password for authentication.
+        type: string
+      username:
+        description: username for authentication.
+        type: string
+    type: object
+  api.ApplyTokenResponse:
+    properties:
+      token:
+        description: token for the given username and password.
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /auth/apply_token:
+    post:
+      consumes:
+      - application/json
+      description: ApplyToken returns a token for the given username and password.
+      parameters:
+      - description: ApplyTokenRequest is a request for ApplyToken.
+        in: body
+        name: req
+        required: true
+        schema:
+          $ref: '#/definitions/api.ApplyTokenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.ApplyTokenResponse'
+      tags:
+      - auth
+swagger: "2.0"
