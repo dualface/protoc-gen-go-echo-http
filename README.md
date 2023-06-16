@@ -231,6 +231,6 @@ Use your browser to view Swagger documentation:
 `http://localhost:12345/v1/swagger/index.html`
 
 
-![generated_swagger_docs.jpg](generated_swagger_docs.jpg)
+![example/generated_swagger_docs.jpg](example/generated_swagger_docs.jpg)
 
 The full example is in the `example` directory.
